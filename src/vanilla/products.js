@@ -1,4 +1,3 @@
-// Fetch products from FakeStore API
 async function fetchProducts() {
     const response = await fetch("https://fakestoreapi.com/products")
     if (!response.ok) {
@@ -22,7 +21,6 @@ function createProductCard(product) {
 
     const button = card.querySelector(".btn-add-cart")
     button?.addEventListener("click", () => {
-        // Dispatch custom event to communicate with React Cart component
         const event = new CustomEvent("addToCart", {detail: product})
         window.dispatchEvent(event)
     })
